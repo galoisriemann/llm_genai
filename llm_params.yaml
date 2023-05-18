@@ -1,0 +1,31 @@
+version: "0.1"
+
+general:
+    doc_dir: "data/qa"
+    DB_SHARDS: 2
+    USE_GPU: False
+    NUM_GPUS: 0
+    OPENAI: False
+
+haystack:
+  DOC_INDEX_PATH: "data/hay_faiss_index.faiss"
+  INDEX_CONFIG_PATH: "data/hay_faiss_config.json"
+  EMBEDDING_MODEL: "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+  READER_MODEL: "deepset/roberta-base-squad2"
+  SQL_URL: "sqlite:///data/sql_hay_store.db"
+  FAISS_INDEX: "Flat"
+  TOP_K_READER: 10
+  TOP_K_RETRIEVER: 2
+
+langchain:
+  EMBEDDING_MODEL: "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+  CHUNK_SIZE: 1000
+  CHUNK_OVERLAP: 50
+  RAY: False
+
+openai:
+  API_KEY: "Inject Key here"
+  MODEL_TYPE: "text-davinci-003" # gpt-4-32k or gpt-3.5-turbo, gpt-4
+
+open_source:
+  MODEL_TYPE: "google/flan-t5-xxl" # "google/flan-t5-large"
