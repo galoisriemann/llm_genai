@@ -1,10 +1,10 @@
-version: "0.1"
+version: "0.2"
 
 general:
     doc_dir: "data/qa"
     DB_SHARDS: 2
     USE_GPU: False
-    NUM_GPUS: 0
+    NUM_GPUS: 1
     OPENAI: False
 
 haystack:
@@ -18,14 +18,16 @@ haystack:
   TOP_K_RETRIEVER: 2
 
 langchain:
+  DOC_INDEX_PATH: "data/lchain_faiss_index.faiss"
   EMBEDDING_MODEL: "sentence-transformers/multi-qa-mpnet-base-dot-v1"
   CHUNK_SIZE: 1000
   CHUNK_OVERLAP: 50
-  RAY: False
+  RAY: True
 
 openai:
   API_KEY: "Inject Key here"
   MODEL_TYPE: "text-davinci-003" # gpt-4-32k or gpt-3.5-turbo, gpt-4
 
 open_source:
-  MODEL_TYPE: "google/flan-t5-xxl" # "google/flan-t5-large"
+  MODEL_TYPE_1: "google/flan-t5-xxl" # "google/flan-t5-large"
+  MODEL_TYPE_2: "declare-lab/flan-alpaca-large"

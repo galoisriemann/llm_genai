@@ -1,3 +1,5 @@
+__author__ = "Biswa Sengupta"
+
 import yaml
 
 def read_yaml(file_path):

@@ -1,3 +1,5 @@
+__author__      = "Biswa Sengupta"
+
 import os
 from pprint import pprint
 
@@ -64,7 +66,7 @@ class LLMDocumentsHay():
                                          \n\n Related text: {join(documents)} \n\n Question: {query} \n\n Answer:""",
             )
 
-            node = PromptNode(model_name_or_path=self.params.get('open_source').get('MODEL_TYPE'),
+            node = PromptNode(model_name_or_path=self.params.get('open_source').get('MODEL_TYPE_1'),
                               default_prompt_template=lfqa_prompt)
         pipe_2.add_node(component=node, name="prompt_node", inputs=["Query"])
         output = pipe_2.run(query=query, documents=retrieved_answers.get('documents'))
@@ -80,7 +82,7 @@ class LLMDocumentsHay():
                                      \n\n Related text: {join(documents)} \n\n Question: {query} \n\n Answer:""",
         )
 
-        prompt_node = PromptNode(model_name_or_path="declare-lab/flan-alpaca-large",
+        prompt_node = PromptNode(model_name_or_path=self.params.get('open_source').get('MODEL_TYPE_2'),
                                  default_prompt_template=lfqa_prompt)
 
         pipe.add_node(component=self.retriever, name="retriever", inputs=["Query"])
