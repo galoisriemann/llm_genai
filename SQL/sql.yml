@@ -1,0 +1,26 @@
+version: "0.1"
+
+general:
+    table_name: "city_stats"
+    CONTEXT: False
+    AUTO_CONTEXT: False
+    RETURN_CONTEXT: False
+    OPEN_AI: True
+
+opensource:
+  MODEL_TYPE: "tiiuae/falcon-7b"
+
+openai:
+  API_KEY: "enter-openai-api"
+  MODEL_TYPE: "text-davinci-003" # gpt-4-32k or gpt-3.5-turbo, gpt-4
+
+stt:
+  AWS_ACCESS_KEY_ID: "xxx"
+  AWS_SECRET_ACCESS_KEY: "xxx"
+  REGION_NAME: "us-east-1"
+  MIC: True
+  AUDIO_FILE: "data/test.wav"
+  WAIT_TIME: 5
+  SAMPLE_RATE: 16000
+  BYTES_PER_SAMPLE: 2
+  CHANNEL_NUMS: 1
